@@ -1,0 +1,169 @@
+.App{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.high{
+    display: flex;
+    /* align-content: center; */
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    /* border: solid 3px black; */
+    width: 100%;
+    margin-bottom: 100px;
+}
+.Logo{
+    width: 200px;
+}
+.NavItems > ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0px 20px;
+}
+
+.NavItems >ul >li {
+    font-size: 24px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.restcard{
+    width: 300px;
+    /* height: 300px; */
+    background-color: white;
+    /* flex-wrap: wrap; */
+    /* border: 1px solid black; */
+    /* padding: 5px; */
+    border-radius: 15px;
+}
+.restcard:hover{
+    /* box-shadow: inset 0px 0px 40px 40px #DBA632; */
+    box-shadow: 2px 2px 20px blue;
+    transform: scale(1.009);
+    cursor: pointer;
+}
+.search{
+    padding: 10px;
+}
+
+.rest-logo{
+    /* margin: 5px; */
+    border-radius:15px 15px 0px 0px;
+    width: 100%;
+    height: 160px;
+}
+.restcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* background-color: navy; */
+    /* background: linear-gradient(90deg, rgba(0, 195, 255, 1) 0%, rgba(0, 128, 0, 1) 100%); */
+    /* padding: 5px; */
+
+}
+.filter-btn{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.filter-btn {
+    position: relative;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #7d2ae8;
+    transition: all 0.2s ease;
+    margin-bottom: 20px;
+  }
+  
+  .filter-btn:active {
+    transform: scale(0.96);
+  }
+  
+  .filter-btn:before,
+  .filter-btn:after {
+    position: absolute;
+    content: "";
+    width: 150%;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
+  }
+  
+  .filter-btn:hover:before {
+    top: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+      10% 10%, 18% 18%;
+    background-position: 50% 120%;
+    animation: greentopBubbles 0.6s ease;
+  }
+  
+  @keyframes greentopBubbles {
+    0% {
+      background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+        40% 90%, 55% 90%, 70% 90%;
+    }
+  
+    50% {
+      background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+        50% 50%, 65% 20%, 90% 30%;
+    }
+  
+    100% {
+      background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+        50% 40%, 65% 10%, 90% 20%;
+      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
+  
+  .filter-btn:hover::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+      radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    background-position: 50% 0%;
+    animation: greenbottomBubbles 0.6s ease;
+  }
+  
+  @keyframes greenbottomBubbles {
+    0% {
+      background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+        70% -10%, 70% 0%;
+    }
+  
+    50% {
+      background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+        105% 0%;
+    }
+  
+    100% {
+      background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+        110% 10%;
+      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
