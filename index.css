@@ -17,6 +17,7 @@
     /* border: solid 3px black; */
     width: 100%;
     margin-bottom: 100px;
+  
 }
 .Logo{
     width: 200px;
@@ -83,6 +84,7 @@
     background-color: #7d2ae8;
     transition: all 0.2s ease;
     margin-bottom: 20px;
+    height: 35px;
   }
   
   .btncss:active {
@@ -217,4 +219,49 @@
   }
   .shimmer_large_para {
     height:48px;
+  }
+
+
+  /* Search bar css */
+
+  .inputBox_container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    max-width: 14em;
+    width: fit-content;
+    height: fit-content;
+    background-color: #5c6370;
+    /* border-radius: 0.8em; */
+    overflow: hidden;
+  }
+  
+  .search_icon {
+    height: 1em;
+    padding: 0 0.5em 0 0.8em;
+    fill: #abb2bf;
+  }
+  
+  .inputBox {
+    background-color: transparent;
+    color: #ffffff;
+    outline: none;
+    width: 100%;
+    border: 0;
+    padding: 0.5em 1.5em 0.5em 0;
+    font-size: 1em;
+  }
+  
+  ::placeholder {
+    color: #abb2bf;
+  }
+  .search{
+    display: flex;
+    gap: 1px;
+  }
+
+  .filter{
+    display: flex;
+    align-items: center;
+    /* height: 20px; */
   }
