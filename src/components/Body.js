@@ -1,13 +1,14 @@
 import Restaurant from "./Restaurant";
 import reslist from "../../utils/Mockdata";
 import { useState,useEffect } from "react";
+import Shimmer from "./shimmer";
 
 
 
 const Body=()=>{
 
     //State variable - super powerfull variable
-    const [listrestraun,setlistrestraun/* this is funcn*/ ]=useState(reslist);
+    const [listrestraun,setlistrestraun/* this is funcn*/ ]=useState([]);
 /* 
     const arr = useState(reslist)
       
@@ -19,6 +20,26 @@ const Body=()=>{
 
 */
 
+useEffect(()=>{
+    /* 
+        this call back functn will be called jus after rendering done
+    */
+   fetchdata();
+},[])
+
+const fetchdata = async ()=>{
+    const data = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=30.4765796&lng=76.5905317&carousel=true&third_party_vendor=1");
+    const json = await data.json();
+
+    console.log(json);
+    setlistrestraun(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+}
+// Conditional rendering :- rendering on the basis of condition is known as conditional rendering
+/*
+if(listrestraun.length == 0){
+    return (<Shimmer/>)
+}
+*/
     //Normal js variable
     // let listrestraunjs =[ {
     //     "info": {
@@ -72,9 +93,9 @@ const Body=()=>{
     //                 "totalRatingsString": "1K+",
     //                 },
     //             }];
-    return (<div className="Body">
+    return listrestraun.length==0?<Shimmer/> : (<div className="Body">
         <div className="search">search</div>
-        <button className="filter-btn" onClick={()=>{
+        <button className="filter-btn btncss" onClick={()=>{
             //filter logic here
             console.log("fg")
             const filteredlistrestraun=listrestraun.filter((res)=>res?.info?.avgRating>=4);
