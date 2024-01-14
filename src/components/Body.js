@@ -1,7 +1,7 @@
 import Restaurant from "./Restaurant";
 import reslist from "../../utils/Mockdata";
 import { useState,useEffect } from "react";
-import Shimmer from "./shimmer";
+import Shimmer from "./Shimmer";
 
 
 
