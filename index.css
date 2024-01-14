@@ -68,12 +68,12 @@
     /* padding: 5px; */
 
 }
-.filter-btn{
+.btncss{
     padding: 5px;
     cursor: pointer;
 }
 
-.filter-btn {
+.btncss {
     position: relative;
     padding: 10px 22px;
     border-radius: 6px;
@@ -85,12 +85,12 @@
     margin-bottom: 20px;
   }
   
-  .filter-btn:active {
+  .btncss:active {
     transform: scale(0.96);
   }
   
-  .filter-btn:before,
-  .filter-btn:after {
+  .btncss:before,
+  .btncss:after {
     position: absolute;
     content: "";
     width: 150%;
@@ -101,7 +101,7 @@
     background-repeat: no-repeat;
   }
   
-  .filter-btn:hover:before {
+  .btncss:hover:before {
     top: -70%;
     background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
       radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
@@ -136,7 +136,7 @@
     }
   }
   
-  .filter-btn:hover::after {
+  .btncss:hover::after {
     bottom: -70%;
     background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
       radial-gradient(circle, #7d2ae8 20%, transparent 20%),
