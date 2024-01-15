@@ -14,7 +14,7 @@ return (
                 <li>Home</li>
                 <li>contact</li>
                 <li>About</li>
-                <li>cart</li>
+                <li >cart</li>
                 <button className="btncss"
                 onClick={()=>{
                     btnName==="Login"?setbtnName("Logout"):setbtnName("Login")
