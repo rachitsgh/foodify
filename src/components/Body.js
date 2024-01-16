@@ -23,6 +23,25 @@ const Body=()=>{
 
 */
 
+/* 
+useEffect callled everytime our component renders 
+
+If there is an empty dependency array = []  -> useEffect is called on intial render only (just once)
+
+
+What if put something in dependency array -> then it will only called when depemdency changes
+for example :- [btnaractname],,,every =time btnnamereact updates/changes my useEffect called
+
+useState hooks can be called inside fumctional component
+useState is used to create local state variable inside ur function 
+
+
+try to call this hook on the top mean so when funcn start,,to ignore inconcistency
+
+never use useState inside if-else condition  --> it'll create inconcistency
+*/
+
+
 useEffect(()=>{
     /* 
         this call back functn will be called jus after rendering done
