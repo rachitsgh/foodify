@@ -9,6 +9,7 @@
     /* align-content: center; */
     align-items: center;
     flex-direction: column;
+
     width: 80%;
 }
 .header{
@@ -43,6 +44,9 @@
     /* flex-wrap: wrap; */
     /* border: 1px solid black; */
     /* padding: 5px; */
+    text-decoration: none;
+    /* text:black; */
+    /* font:black; */
     border-radius: 15px;
 }
 .restcard:hover{
@@ -64,7 +68,7 @@
 .restcontainer,.Shimmer-container{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 70px;
     /* background-color: navy; */
     /* background: linear-gradient(90deg, rgba(0, 195, 255, 1) 0%, rgba(0, 128, 0, 1) 100%); */
     /* padding: 5px; */
@@ -315,3 +319,38 @@
     justify-content: center;
     flex-wrap: wrap;
   } */
+
+  /* About us css */
+
+  .user-card{
+    padding: 10px;
+  }
+
+  /* About us css */
+  .about-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* gap: 300px; */
+    /* width: 100%; */
+    /* flex-wrap: wrap; */
+  }
+
+  .orange{
+    background-color: rgb(123, 68, 225);
+    color:white;
+    border-radius: 5px;
+    padding: 5px;
+    letter-spacing: 5px;
+  }
+  .purpletxt{
+    color: rgb(123, 68, 225);
+  }
+
+  .aboutimginside{
+    width: 80%;
+  }
+  .about-text{
+    width: 80%;
+  }
