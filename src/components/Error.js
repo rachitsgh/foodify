@@ -16,7 +16,7 @@ const Error = ()=>{
 									Look like you're lost
 								</h3>		
 								<p>the page you are looking for not avaible!</p>		
-								<a href="" className="link_404"><Link to="/">Go to Home</Link></a>
+								<div  className="link_404"><Link to="/">Go to Home</Link></div>
 							</div>
 						</div>
 					</div>
