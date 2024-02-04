@@ -2,7 +2,9 @@ export const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_l
 
 export const LOGO_URL = "https://www.clipartmax.com/png/middle/111-1118804_android-food-delivery-apps.png"
 
+export const ABOUT_IMG_URL="https://img.freepik.com/premium-photo/burger-white-isolated-background_565470-1066.jpg?w=1800"
 
+export const MENU_API ="https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId="
 //Above export is known named export 
 
 
