@@ -1,7 +1,9 @@
-import Restaurant from "./Restaurant";
+import Restaurant,{withPromotedLabel} from "./Restaurant";
 // import reslist from "../../utils/Mockdata";
 import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 
 
@@ -12,6 +14,10 @@ const Body=()=>{
     const [filteredrestraun,setfilteredrestraun]=useState([]);
 
     const [searchtext,setsearchtext]=useState("");
+
+    const RestaurantCardwithLabel=withPromotedLabel(<Restaurant/>)
+
+   
 /* 
     const arr = useState(reslist)
       
@@ -42,6 +48,7 @@ never use useState inside if-else condition  --> it'll create inconcistency
 */
 
 
+
 useEffect(()=>{
     /* 
         this call back functn will be called jus after rendering done
@@ -53,7 +60,7 @@ useEffect(()=>{
 
 const fetchdata = async ()=>{
     const data = await fetch("https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING");
-    const json = await data.json();
+const json = await data.json();
 
     console.log(json);
     setlistrestraun(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -118,6 +125,11 @@ if(listrestraun.length == 0){
     //                 "totalRatingsString": "1K+",
     //                 },
     //             }];
+
+    const onlineStatus=useOnlineStatus();
+    if(onlineStatus===false) return (<h1>looks like you're offline!! check your internet connection</h1>);
+
+
     return  listrestraun.length ==0 ?(<Shimmer/>) : (
     <div className="Body">
         <div className="filter">
@@ -161,7 +173,10 @@ if(listrestraun.length == 0){
         <div className="restcontainer" /*style={style} */ >
             {/* <Restaurant resdata={resobj[0]}/>
             <Restaurant resdata={resobj[1]}/> */
-            filteredrestraun.map((restaurant,index)=>(<Restaurant key={restaurant?.info?.id} resdata={restaurant}/>))
+            filteredrestraun.map((restaurant,index)=>(<Link to={"/restaurants/"+restaurant?.info?.id}> 
+            {/* if the restaurant is promoted then add promoted label */}
+            {/* restaurant?.data?.promoted?<RestaurantCardwithLabel key={restaurant?.info?.id} resdata={restaurant}/>:<Restaurant key={restaurant?.info?.id} resdata={restaurant}/>; */}
+            <Restaurant key={restaurant?.info?.id} resdata={restaurant}/></Link>))
             }
             {/* we use index as key also
 
