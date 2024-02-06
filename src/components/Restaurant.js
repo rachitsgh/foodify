@@ -25,4 +25,19 @@ const Restaurant=(props) /*/or (resname,cuisine) known as destructuring of props
     </div>
 )};
 
+// Higher order restaurant
+
+//input->RestaurantCard,output->RestaurantCardPromoted
+
+export const withPromotedLabel=(props)=>{
+    return ()=>{
+        return(
+            <div>
+                <label className="absolute bg-black rounded-lg m-2 p-2 ">promoted</label>
+                <Restaurant {...props}/>
+            </div>
+        );
+    };
+}
+
 export default Restaurant;
