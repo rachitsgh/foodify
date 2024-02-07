@@ -7,7 +7,7 @@ This document outlines the creation of a food delivery website using the MERN (M
 The project aims to develop a user-friendly food delivery website to facilitate orders and deliveries. It will include features like user registration, food browsing, and order placement.
 
 - **User-Friendly Interface**: The website will have an intuitive, easy-to-navigate interface to improve user experience.
-- **Order and Delivery Management**: Efficient order and delivery management will be integrated for smooth operations.
+<!-- - ***:  -->
 
 ## User Requirements
 
