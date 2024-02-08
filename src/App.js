@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import  ReactDOM from "react-dom/client"
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,8 +8,18 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Restaurantmenu from "./components/Restaurantmenu";
 import User from "./components/User";
+import UserContext from "../utils/UserContext";
+import { Provider } from "react-redux";
 // import Restaurant from "./components/Restaurant";
 
+//Chunking
+//code splitting
+//Dynamic Bundling
+//Lazy loading
+//on demand loading
+//dynamic import
+
+// const Grocery=lazy(()=>import("path"))
 
 //header 
 //   - Logo
@@ -33,8 +43,21 @@ import User from "./components/User";
 
 
 
-const AppLayout = ()=>(
-    <div className="App">
+const AppLayout = ()=>{
+    const [userName,setUserName]=useState();
+
+    //authentication logic
+    useEffect(()=>{
+        //Make an API call and send username and pswd
+        const data={
+            name:"Rachit Pathak",
+        }
+        setUserName (data.name);
+    },[])
+
+   return (
+   <UserContext.Provider value={{loggedInUser:userName,setUserName} }>
+   <div className="App">
         <div className="high">
             <Header></Header>
             <Outlet/>
@@ -46,7 +69,8 @@ const AppLayout = ()=>(
             {/* <Contact/> */}
         </div>
     </div>
-);
+    </UserContext.Provider>
+)};
 
 const appRouter = createBrowserRouter([
     {
@@ -69,7 +93,17 @@ const appRouter = createBrowserRouter([
             },{
                 path:"/restaurants/:resId",
                 element:<Restaurantmenu/>
+            },
+            /*
+            {
+                path:"/grocery",
+                element:(
+                    <Suspense fallback={<Shimmer/>}>
+                        <Grocery/>
+                    </Suspense>
+                )
             }
+            */
         ],
         errorElement:<Error/>,
     }
